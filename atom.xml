@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-10-06T10:49:10.595Z</updated>
+  <updated>2024-06-06T11:53:41.747Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于超辐射晶格实现Creutz模型中的平带局域化</title>
+    <link href="http://example.com/2024/06/06/%E5%9F%BA%E4%BA%8E%E8%B6%85%E8%BE%90%E5%B0%84%E6%99%B6%E6%A0%BC%E5%AE%9E%E7%8E%B0Creutz%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%B9%B3%E5%B8%A6%E5%B1%80%E5%9F%9F%E5%8C%96/"/>
+    <id>http://example.com/2024/06/06/%E5%9F%BA%E4%BA%8E%E8%B6%85%E8%BE%90%E5%B0%84%E6%99%B6%E6%A0%BC%E5%AE%9E%E7%8E%B0Creutz%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%9A%84%E5%B9%B3%E5%B8%A6%E5%B1%80%E5%9F%9F%E5%8C%96/</id>
+    <published>2024-06-06T09:29:34.000Z</published>
+    <updated>2024-06-06T11:53:41.747Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="所述论文"><a href="#所述论文" class="headerlink" title="所述论文"></a>所述论文</h2><p><a href="physrevlett.126.103601.pdf">Flat-Band Localization in Creutz Superradiance Lattices</a></p><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><h3 id="紧束缚晶格："><a href="#紧束缚晶格：" class="headerlink" title="紧束缚晶格："></a>紧束缚晶格：</h3><p>​        具有平移对称性的系统在物理学中很常见，例如晶体中原子的周期性排列，当所有相邻位置的波函数的重叠很小以至于可以忽略时，波函数被认为在其晶格位置周围很好地局部化了，这便是紧束缚近似。</p><p>​        在这种近似中，波函数存在于空间中的离散点中，因此可以通过其晶格位置的索引来标记，其传输仅通过相邻格点的hopping发生。</p><h3 id="平带："><a href="#平带：" class="headerlink" title="平带："></a>平带：</h3><p>​        平带是无色散的能带，其的一大特征是粒子的群速度为0，同时，由于平带上粒子有效质量很大，相比于动能整个系统会对一些特殊的势能非常敏感，这使得平带被认为是研究多体现象的理想体系。</p><p>​        对于平带的最简单构造，我们可以从孤立格点的情况考虑，当所有跳变都为0时，系统的单粒子定态薛定谔方程如下所示：</p><script type="math/tex; mode=display">H\mid\psi>=E\mid\psi>\tag{1}</script><p>​        我们将整体的波函数用单个晶胞的波函数作为基展开，带入薛定谔方程中得到此时的特征值问题如下公式:</p><script type="math/tex; mode=display">\varepsilon_{j}\phi_{nj}=E\phi_{nj}\quad （j=1，2......)\tag{2}</script><p>​        其中ϕ~nj~为第n个晶胞中第j个位点处的局域波函数。此时我们可以解出整个系统只存在j个无色散的平带。如图1，我们给出了两个位点孤立晶胞中平带的示意图。然而当晶胞之间越来越近时，它们之间的hopping项变得非零，此时平带便不能维持。</p><p><img src="1.png#pic_center" alt="两个位点孤立晶胞晶格上的平带示意图"></p><center>图1 两个位点孤立晶胞晶格上的平带示意图</center><p>​        在实际问题中，除了孤立晶胞外，还有一些晶格中hopping项虽然不能忽略，但是由于晶格几何形状的对称性，从相邻位置跳变的波函数具有相等振幅的相反相位，由此产生破坏性干涉，结果，波函数被困在有限数量的格点中，在其他地方严格为0，这种严格定域状态被称为紧凑局域态（CLS），它会产生类似于孤立晶胞的效果。如图2是在笼目晶格上的CLS态与平带示意图。</p><p><img src="2.png#pic_center" alt="两个位点孤立晶胞晶格上的平带示意图"></p><center>图2 笼目晶格中的紧凑局域态和平带示意图</center><h2 id="论文概要"><a href="#论文概要" class="headerlink" title="论文概要"></a>论文概要</h2><p>​        在该论文中，我们利用一束弱probe光和两束驻波coupling光在室温原子气体中模拟出了参数高度可调的Creutz型超辐射晶格。如图3所示为能级示意图，如图4所示为Creutz示意图。</p><p><img src="3.png#pic_center" alt="两个位点孤立晶胞晶格上的平带示意图"></p><center>图3 能级示意图</center><p><img src="4.png#pic_center" alt="两个位点孤立晶胞晶格上的平带示意图"></p><center>图4 Creutz超辐射晶格示意图</center><p>​        我们发现其晶格能带具有一个平带和一个色散带，分别对应了局域化与非局域化。在实验中通过探测近邻格点的反射谱来探测晶格性质，通过改变晶格中耦合系数的相对大小可以选择性激发不同的能带，通过对晶格内闭合路径中相位的精确调节，可以调控平带的局域化性质。</p><h3 id="体系的哈密顿量演化"><a href="#体系的哈密顿量演化" class="headerlink" title="体系的哈密顿量演化"></a>体系的哈密顿量演化</h3><p>​        有关体系的哈密顿量演化，我们首先写出其实空间哈密顿量：</p><script type="math/tex; mode=display">H=-\sum_{j}(\Omega_{p}e^{ik_px_j+i\triangle_dt}e^{-iv_pt}\mid{a_j}><b_{j}\mid+H.C.)-\sum_{j}(2\Omega_{1}cos(k_cx_j+\triangle_dt+\phi/4)e^{-iv_1t}\mid{a_j}><c_{j}\mid+H.C)</script>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;所述论文&quot;&gt;&lt;a href=&quot;#所述论文&quot; class=&quot;headerlink&quot; title=&quot;所述论文&quot;&gt;&lt;/a&gt;所述论文&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;physrevlett.126.103601.pdf&quot;&gt;Flat-Band Localization in</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>基于超辐射晶格观测手性边缘流</title>
+    <link href="http://example.com/2024/06/06/%E5%9F%BA%E4%BA%8E%E8%B6%85%E8%BE%90%E5%B0%84%E6%99%B6%E6%A0%BC%E8%A7%82%E6%B5%8B%E6%89%8B%E6%80%A7%E8%BE%B9%E7%BC%98%E6%B5%81/"/>
+    <id>http://example.com/2024/06/06/%E5%9F%BA%E4%BA%8E%E8%B6%85%E8%BE%90%E5%B0%84%E6%99%B6%E6%A0%BC%E8%A7%82%E6%B5%8B%E6%89%8B%E6%80%A7%E8%BE%B9%E7%BC%98%E6%B5%81/</id>
+    <published>2024-06-06T07:49:18.000Z</published>
+    <updated>2024-06-06T09:22:54.667Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><ul><li>霍尔效应的示意图如图，当电流垂直于外磁场通过导体或半导体时，在垂直于磁场和电流方向会出现一个稳定的电势差，其原理是因为洛伦兹力与电场力平衡。然而，我们之后发现其存在量子版本，在极低温和强磁场下，对于二维体系的霍尔效应实验中，我们发现其霍尔电阻并不随着磁场强度增大做线性变化，而是呈分立排布，这就是量子霍尔效应。</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h4 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;霍尔效应的示意图如图，当电流垂直于外磁场通过导体或半导体时，在垂直于磁场和电流方向会出现一个稳定的电势差，其原理是因为洛伦兹力与</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
