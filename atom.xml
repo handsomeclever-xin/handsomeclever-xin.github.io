@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-07T12:14:48.180Z</updated>
+  <updated>2024-06-09T13:09:09.614Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>饱和吸收谱</title>
+    <link href="http://example.com/2024/06/09/%E9%A5%B1%E5%92%8C%E5%90%B8%E6%94%B6%E8%B0%B1/"/>
+    <id>http://example.com/2024/06/09/%E9%A5%B1%E5%92%8C%E5%90%B8%E6%94%B6%E8%B0%B1/</id>
+    <published>2024-06-09T13:07:08.000Z</published>
+    <updated>2024-06-09T13:09:09.614Z</updated>
+    
+    <content type="html"><![CDATA[<p>饱和吸收谱一般在实验上用于找对照点，之后详述。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;饱和吸收谱一般在实验上用于找对照点，之后详述。&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>电磁诱导透明(EIT)</title>
+    <link href="http://example.com/2024/06/09/%E7%94%B5%E7%A3%81%E8%AF%B1%E5%AF%BC%E9%80%8F%E6%98%8E(EIT)/"/>
+    <id>http://example.com/2024/06/09/%E7%94%B5%E7%A3%81%E8%AF%B1%E5%AF%BC%E9%80%8F%E6%98%8E(EIT)/</id>
+    <published>2024-06-09T13:02:43.000Z</published>
+    <updated>2024-06-09T13:07:45.461Z</updated>
+    
+    <content type="html"><![CDATA[<p>立个坑，记录下EIT的完整推导过程</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;立个坑，记录下EIT的完整推导过程&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>用python的pandas库以实验数据画出需要的双稳态图</title>
