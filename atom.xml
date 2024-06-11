@@ -42,19 +42,23 @@
     <link href="http://example.com/2024/06/09/%E7%94%B5%E7%A3%81%E8%AF%B1%E5%AF%BC%E9%80%8F%E6%98%8E(EIT)/"/>
     <id>http://example.com/2024/06/09/%E7%94%B5%E7%A3%81%E8%AF%B1%E5%AF%BC%E9%80%8F%E6%98%8E(EIT)/</id>
     <published>2024-06-09T13:02:43.000Z</published>
-    <updated>2024-06-09T13:07:45.461Z</updated>
+    <updated>2024-06-11T04:00:12.333Z</updated>
     
-    <content type="html"><![CDATA[<p>立个坑，记录下EIT的完整推导过程</p>]]></content>
+    <content type="html"><![CDATA[<p>立个坑，记录下EIT的完整推导过程</p><h2 id="电磁诱导透明（EIT）"><a href="#电磁诱导透明（EIT）" class="headerlink" title="电磁诱导透明（EIT）"></a>电磁诱导透明（EIT）</h2><h3 id="EIT简介"><a href="#EIT简介" class="headerlink" title="EIT简介"></a>EIT简介</h3><p>​    电磁诱导透明即在三能级原子组成的一个介质中，在强驱动电磁场的作用下对弱探测电磁场呈现透明的现象。</p><p>​    所谓透明的现象就是指的是这个体系对弱探测电磁场是没有作用的，包括：吸收和相互之间的一些作用，因此我们无法观测到他，则他是透明的。</p><p>​    电磁诱导透明是一般是用两束光同时照射到原子介质，使得其中一束光能够在与原子跃迁共振时通过原子介质而不产生吸收和反射的现象。如图1所示</p><p>​    EIT是一种典型的量子相干效应，其本质为强耦合光影响了吸收介质的色散性质，从而使介质对弱探测光的吸收减小甚至完全透明。</p><p><img src="电磁诱导透明(EIT)/1.png" alt="电磁诱导透明示意图" style="zoom: 67%;" /></p><h3 id="EIT推导"><a href="#EIT推导" class="headerlink" title="EIT推导"></a>EIT推导</h3><h4 id="系统哈密顿量"><a href="#系统哈密顿量" class="headerlink" title="系统哈密顿量"></a>系统哈密顿量</h4><p>​    在薛定谔绘景下，体系哈密顿量包含两部分：<script type="math/tex">H=H_0+V</script>，</p><p>​    其中<script type="math/tex">H_0</script>是自由哈密顿量部分，即<script type="math/tex">H_0=\hbar\omega_a\mid{a}><a\mid+\hbar\omega_b\mid{b}><b\mid+\hbar\omega_c\mid{c}><c\mid</script></p><p>​    相互作用部分：<script type="math/tex">V=-\frac{\hbar}{2}(\frac{D_{ab}E}{\hbar}e^{-i\nu{t}}\mid{a}><b\mid+\Omega_de^{-i\varphi_d}e^{-i\nu_d{t}}\mid{a}><c\mid+H.C.)</script></p><p>​    其中<script type="math/tex">D_{ab}</script>是a,b两个能级的电偶极矩，<script type="math/tex">E</script>为探测场强度，<script type="math/tex">\nu</script>为探测场频率，<script type="math/tex">\Omega_d</script>为耦合场拉比频率，<script type="math/tex">\varphi_d</script>为耦合场初相位，<script type="math/tex">\nu_d</script>为耦合场频率。</p><p>​    由此，系统的哈密顿量可以写为矩阵形式：</p><script type="math/tex; mode=display">H=\begin{pmatrix}\hbar\omega_a & -\frac{D_{ab}E}{2}e^{-i\nu{t}}&-\frac{\hbar\Omega_d}{2}e^{-i\varphi_d}e^{-i\nu_d{t}}\\-\frac{D_{ab}E}{2}e^{-i\nu{t}} &\hbar\omega_b& 0 \\-\frac{\hbar\Omega_d}{2}e^{-i\varphi_d}e^{-i\nu_d{t}}&0 &\hbar\omega_c \end{pmatrix}</script>]]></content>
     
     
       
       
     <summary type="html">&lt;p&gt;立个坑，记录下EIT的完整推导过程&lt;/p&gt;
-</summary>
+&lt;h2 id=&quot;电磁诱导透明（EIT）&quot;&gt;&lt;a href=&quot;#电磁诱导透明（EIT）&quot; class=&quot;headerlink&quot; title=&quot;电磁诱导透明（EIT）&quot;&gt;&lt;/a&gt;电磁诱导透明（EIT）&lt;/h2&gt;&lt;h3 id=&quot;EIT简</summary>
       
     
     
     
+    
+    <category term="电磁诱导透明(EIT)" scheme="http://example.com/tags/%E7%94%B5%E7%A3%81%E8%AF%B1%E5%AF%BC%E9%80%8F%E6%98%8E-EIT/"/>
+    
+    <category term="量子光学" scheme="http://example.com/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/"/>
     
   </entry>
   
