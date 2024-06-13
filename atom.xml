@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-11T08:09:08.539Z</updated>
+  <updated>2024-06-13T12:05:08.901Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>纯态混态与密度算符</title>
+    <link href="http://example.com/2024/06/13/%E7%BA%AF%E6%80%81%E6%B7%B7%E6%80%81%E4%B8%8E%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6/"/>
+    <id>http://example.com/2024/06/13/%E7%BA%AF%E6%80%81%E6%B7%B7%E6%80%81%E4%B8%8E%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6/</id>
+    <published>2024-06-13T10:46:21.000Z</published>
+    <updated>2024-06-13T12:05:08.901Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="纯态和混态"><a href="#纯态和混态" class="headerlink" title="纯态和混态"></a>纯态和混态</h2><h3 id="纯态-pure-state"><a href="#纯态-pure-state" class="headerlink" title="纯态(pure state)"></a>纯态(pure state)</h3><p>​    可以用态矢量描述的量子态即为纯态<script type="math/tex">\mid\varphi></script>。</p><h3 id="混态-mixed-state"><a href="#混态-mixed-state" class="headerlink" title="混态(mixed state)"></a>混态(mixed state)</h3><p>​    混态本质上是一种统计系综，是大量性质相同各自独立的系统的集合。在这些系统当中，我们知道有多少系统处于不同的量子态</p><p>中。此时我们在这些系统中拿出一个系统来，我们想描述这个系统的状态，但我们无法确定这个系统到底处于哪个状态上，而是我们能说他是以不同的概率<script type="math/tex">p_n</script>处于<script type="math/tex">\mid\varphi_n></script>上。</p><h2 id="密度算符-density-operator"><a href="#密度算符-density-operator" class="headerlink" title="密度算符(density operator)"></a>密度算符(density operator)</h2><h3 id="表示"><a href="#表示" class="headerlink" title="表示"></a>表示</h3><pre><code> 对于纯态$$\mid\varphi&gt;$$，密度算符可以表示为：$$\rho=\mid\varphi&gt;&lt;\varphi\mid$$</code></pre><p>​    对于混态，我们需要将其中的每一个参与态做外积，乘以相应的几率，然后对所有可能的参与态进行求和<script type="math/tex">\rho=\sum_n{p_n}\mid\varphi_n><\varphi_n\mid</script></p><p>​    其中有归一化条件<script type="math/tex">\sum_n{p_n}=1</script>，<strong>同时，对于混态中的参与态<script type="math/tex">\mid\varphi_n></script>，不要求其满足正交完备性。</strong></p><p>​    再者，在混态的密度算符中，对于同一个<script type="math/tex">\rho</script>，他们参与态的形式并不唯一。并且其可能的参与态方式是有无穷多个，在所有这些不同的参与方式中，<strong>里面一定存在一组正交归一完备的参与态，这组参与态就是密度算符的本征态。</strong></p><h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><ol><li>厄密性：<script type="math/tex">\rho^\dagger=\rho</script></li><li>单位迹：Tr<script type="math/tex">\rho</script>=1</li><li>半正定性：密度矩阵在任意态上的平均值都是非负的，<script type="math/tex">"<\phi\mid\rho\mid\phi>"\geq0</script></li><li><script type="math/tex">Tr\rho^2\leq1</script>，当<script type="math/tex">\rho</script>表示纯态的时候取等号</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;纯态和混态&quot;&gt;&lt;a href=&quot;#纯态和混态&quot; class=&quot;headerlink&quot; title=&quot;纯态和混态&quot;&gt;&lt;/a&gt;纯态和混态&lt;/h2&gt;&lt;h3 id=&quot;纯态-pure-state&quot;&gt;&lt;a href=&quot;#纯态-pure-state&quot; class=&quot;header</summary>
+      
+    
+    
+    
+    
+    <category term="量子光学" scheme="http://example.com/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/"/>
+    
+    <category term="混态" scheme="http://example.com/tags/%E6%B7%B7%E6%80%81/"/>
+    
+    <category term="密度算符" scheme="http://example.com/tags/%E5%AF%86%E5%BA%A6%E7%AE%97%E7%AC%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>饱和吸收谱</title>
