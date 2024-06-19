@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-13T12:05:08.901Z</updated>
+  <updated>2024-06-19T11:35:44.949Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>单模光与多能级原子相互作用的半经典理论</title>
+    <link href="http://example.com/2024/06/19/%E5%8D%95%E6%A8%A1%E5%85%89%E4%B8%8E%E5%A4%9A%E8%83%BD%E7%BA%A7%E5%8E%9F%E5%AD%90%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E5%8D%8A%E7%BB%8F%E5%85%B8%E7%90%86%E8%AE%BA/"/>
+    <id>http://example.com/2024/06/19/%E5%8D%95%E6%A8%A1%E5%85%89%E4%B8%8E%E5%A4%9A%E8%83%BD%E7%BA%A7%E5%8E%9F%E5%AD%90%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E5%8D%8A%E7%BB%8F%E5%85%B8%E7%90%86%E8%AE%BA/</id>
+    <published>2024-06-19T10:11:44.000Z</published>
+    <updated>2024-06-19T11:35:44.949Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>半经典理论：光场用Maxwell方程描述，原子或电子遵循薛定谔方程，适用领域：光场的量子涨落效应不太显著。</strong></p><h2 id="单模光场与原子相互作用的半经典理论"><a href="#单模光场与原子相互作用的半经典理论" class="headerlink" title="单模光场与原子相互作用的半经典理论"></a>单模光场与原子相互作用的半经典理论</h2><p>​    对于单模光场与多能级原子的相互作用，我们首先列出该原子的薛定谔方程</p><h3 id="系统哈密顿量"><a href="#系统哈密顿量" class="headerlink" title="系统哈密顿量"></a>系统哈密顿量</h3><p>​    该系统的哈密顿量可以表示为：<script type="math/tex">H=H_A+H'</script>，其中<script type="math/tex">H_A</script>为原子自由哈密顿量，通常采用原子的自身表象，<script type="math/tex">H'</script>为相互作用哈密顿量。</p><p>​    此时对于<script type="math/tex">H_A</script>,其本征值方程为:<script type="math/tex">H_A\mid{k}>=E_k\mid{k}>=\hbar\omega_k\mid{k}></script>，此时采用原子自身表象，<script type="math/tex">H_A</script>可以表示为<script type="math/tex">H_A=\sum_k(\hbar\omega_k\mid{k}><k\mid)</script>。</p><p>​    考虑光场与原子的相互作用。光场是一种电磁场，既存在电场也存在磁场，他们均会与原子发生相互作用，可是在通常情况下，电场与原子发生相互作用的强度相比磁场而言大很多（大两个数量级）。此时，我们可以忽略磁场，在考虑光与物质的相互作用时通常只考虑电磁波的电场，而不考虑其磁场。同时，在半经典理论中，我们将电场按照经典场来处理，即<script type="math/tex">\textbf{E}=\vec{e}{\xi}cos(\omega_Lt-\textbf{k}\cdot\textbf{r}+\phi)</script>。其中<script type="math/tex">\vec{e}</script>为电场偏振方向，<script type="math/tex">\omega_L</script>为电场频率。</p><p>​    再考虑光与原子相互作用中，电偶极相互作用是最强的，采用<strong>电偶极近似</strong>，则光与原子相互作用的哈密顿量为：<script type="math/tex">H_1=-\hat{d}{\cdot}E</script>。其中<script type="math/tex">\hat{d}</script>是原子的电偶极矩算符：<script type="math/tex">\hat{d}=-e\textbf{r}</script>。此时在<script type="math/tex">H_A</script>表象中：<script type="math/tex">\hat{d}=\sum_j\mid{j}><j\mid\hat{d}\sum_k\mid{k}><k\mid=\sum_{j,k}\vec{d}_{jk}\mid{j}><k\mid</script>。其中<script type="math/tex">\vec{d}_{jk}=<j\mid{\vec{d}}\mid{k}></script>为电偶极矩矩阵元</p><p>​    由此我们得到单模光场与原子相互作用的半经典哈密顿量：<script type="math/tex">H=\sum_k(\hbar\omega_k\mid{k}><k\mid)-\sum_{j,k}\vec{E}\cdot\vec{d}_{jk}\mid{j}><k\mid</script>。此时哈密顿量中并没有光场所代表的算符，因此我们实际上在半经典理论中是将光场作为环境来处理的(这一点日后要同缀饰态区分)。</p><p>​    最后，对于光场<script type="math/tex">\textbf{E}=\hat{e}{\xi}cos(\omega_Lt-\textbf{k}\cdot\textbf{r}+\phi)</script>，由于原子线度约为<script type="math/tex">10^{-10}m</script>，而可见光与微波波段<script type="math/tex">\lambda\approx400-700nm</script>，因此在原子范围内我们可以将光场看成是均匀的，此时可以取原子当地电场值来进行计算，而忽略其随空间的变化，这称为<strong>长波近似</strong>。取原子位置为坐标原点（r=0)，于是电场为<script type="math/tex">\textbf{E}=\vec{e}{\xi}cos(\omega_Lt+\phi)</script>。</p><h2 id="单模光场与二能级系统的相互作用"><a href="#单模光场与二能级系统的相互作用" class="headerlink" title="单模光场与二能级系统的相互作用"></a>单模光场与二能级系统的相互作用</h2><h3 id="系统哈密顿量-1"><a href="#系统哈密顿量-1" class="headerlink" title="系统哈密顿量"></a>系统哈密顿量</h3><p>​    对于二能级系统，由上节可知，系统的哈密顿量在以<script type="math/tex">\mid{e}></script>与<script type="math/tex">\mid{g}></script>为基矢的表象中可写为:<script type="math/tex">H=\hbar\omega_g\mid{g}><g\mid+\hbar\omega_e\mid{e}><e\mid-\vec{E}(\vec{d}_{eg}\mid{e}><g\mid+\vec{d}_{ge}\mid{g}><e\mid)</script>。其中<script type="math/tex">d_{eg}</script>和<script type="math/tex">d_{ge}</script>分别为对应的偶极跃迁矩阵元，在二能级系统中相等。</p><p>​    同时为简化起见，定义<strong>拉比频率</strong><script type="math/tex">\Omega_R</script>：<script type="math/tex">\Omega_R=\frac{-d_{eg}{\xi}}{\hbar}=\frac{er_{eg}{\xi}}{\hbar}</script>。</p><p>​    则系统哈密顿量可写为：<script type="math/tex">H=H_A+H'=\hbar\begin{pmatrix}\omega_e & \Omega_Rcos(\omega_Lt+\phi) \\\Omega_Rcos(\omega_Lt+\phi) & \omega_g\end{pmatrix}</script></p><p>​    我们可以整体移动能量零点来使得哈密顿量更方便求解，令<script type="math/tex">\omega_e=-\omega_g=\frac{1}{2}(\omega_e-\omega_g)=\frac{1}{2}\omega_0</script>，</p><p>​    此时：<script type="math/tex">H=\hbar\begin{pmatrix}\frac{1}{2}\omega_0 & \Omega_Rcos(\omega_Lt+\phi) \\\Omega_Rcos(\omega_Lt+\phi) &- \frac{1}{2}\omega_0\end{pmatrix}</script></p><p>​    也可以用泡利矩阵的形式写为：<script type="math/tex">H=\frac{1}{2}\hbar\omega_0\sigma_z+\hbar\Omega_R(\sigma^++\sigma^-)cos(\omega_Lt+\phi)</script>。</p><h3 id="系统薛定谔方程的求解"><a href="#系统薛定谔方程的求解" class="headerlink" title="系统薛定谔方程的求解"></a>系统薛定谔方程的求解</h3><p>​    我们通过求解二体系统中的薛定谔方程，以得到波函数在该系统中的演化过程。</p><p>​    在基矢<script type="math/tex">\mid{e}></script>和<script type="math/tex">\mid{g}></script>所张成的空间中，原子的波函数可以写为：<script type="math/tex">\mid\varphi>=C_e(t)\mid{e}>+C_g(t)\mid{g}></script>。定义<script type="math/tex">\begin{cases}c_e=C_ee^{i\omega_0t/2}\\c_g=C_ge^{-i\omega_0t/2}\end{cases}</script>，将其带入二能级系统的薛定谔方程，解之得：<script type="math/tex">\begin{cases}\dot{c}_e=-i\frac{\Omega_R}{2}c_g[e^{i(\omega_0-\omega_L)t-i\phi}+e^{i(\omega_0+\omega_L)t+i\phi}]\\\dot{c}_g=-i\frac{\Omega_R}{2}c_e[e^{-i(\omega_0-\omega_L)t+i\phi}+e^{-i(\omega_0+\omega_L)t-i\phi}]\end{cases}</script></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;strong&gt;半经典理论：光场用Maxwell方程描述，原子或电子遵循薛定谔方程，适用领域：光场的量子涨落效应不太显著。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;单模光场与原子相互作用的半经典理论&quot;&gt;&lt;a href=&quot;#单模光场与原子相互作用的半经典理论&quot; class=</summary>
+      
+    
+    
+    
+    
+    <category term="量子光学" scheme="http://example.com/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/"/>
+    
+    <category term="单模光场" scheme="http://example.com/tags/%E5%8D%95%E6%A8%A1%E5%85%89%E5%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>纯态混态与密度算符</title>
