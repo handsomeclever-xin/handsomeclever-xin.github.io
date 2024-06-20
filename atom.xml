@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-19T11:35:44.949Z</updated>
+  <updated>2024-06-20T09:12:00.502Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>压缩光</title>
+    <link href="http://example.com/2024/06/19/%E5%8E%8B%E7%BC%A9%E5%85%89/"/>
+    <id>http://example.com/2024/06/19/%E5%8E%8B%E7%BC%A9%E5%85%89/</id>
+    <published>2024-06-19T11:41:07.000Z</published>
+    <updated>2024-06-20T09:12:00.502Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="量子噪声"><a href="#量子噪声" class="headerlink" title="量子噪声"></a>量子噪声</h2><p>​    量子噪声是对于一个量子系统进行测量和控制过程中引入的不可避免的干扰和误差。</p><p>​    由<strong>广义不确定性原理</strong>，对于两个算符<script type="math/tex">\hat{F}</script>，<script type="math/tex">\hat{G}</script>，假设两个算符不可对易，且对易子满足<script type="math/tex">[F,G]=ik</script>，则有</p><p><img src="1.png" alt="image-20240619200014923" style="zoom:80%;" /></p><p>。。。。。。。。</p><h2 id="压缩光"><a href="#压缩光" class="headerlink" title="压缩光"></a>压缩光</h2><p>​    压缩光作为一种非经典光源，是对光场某一正交分量量子噪声进行压缩，在不违背海森堡不确定性原理前提下，一个正交分量的不确定度大于标准量子极限，则另一个正交分量的不确定度将低于标准量子极限，也就是说压缩态光场能够用来突破标准量子极限(SQL)。</p><h3 id="压缩态"><a href="#压缩态" class="headerlink" title="压缩态"></a>压缩态</h3><h4 id="压缩算符"><a href="#压缩算符" class="headerlink" title="压缩算符"></a>压缩算符</h4><p>​    定义压缩算符为<script type="math/tex">\hat{S}{(\xi)}=e^{\frac{1}{2}(\xi^*{\hat{a}}^2-\xi{\hat{a}}^{\dagger2})}</script>，其中<script type="math/tex">\xi=re^{i\theta}</script>，<script type="math/tex">r</script>为压缩参数，<script type="math/tex">\theta</script>为压缩角。</p><p>​    可以看出<script type="math/tex">\hat{S}</script>中出现的是产生算符与压缩算符的二次方，由此可以推断压缩算符可能会与一些双光子的过程有关。同时可以看出压缩算符是幺正的，这也意味着我们可以适当的设计一个哈密顿量，让其成为一个时间演化算符，使系统演化成相应的压缩态，这一点从后面我们可以看出。</p><p>​    由B-H恒等式可以推算出：<script type="math/tex">\hat{S}^\dagger\hat{a}\hat{S}=\hat{a}coshr-{\hat{a}^\dagger}e^{i\theta}sinhr</script></p><h4 id="压缩真空态"><a href="#压缩真空态" class="headerlink" title="压缩真空态"></a>压缩真空态</h4><p>​    特别的，考虑当压缩算符作用在真空态上时，将得到<strong>压缩真空态</strong>，记为：<script type="math/tex">\mid\xi>=\hat{s}{(\xi)}\mid0></script>。</p><hr><p>​    对于压缩真空态的基本性质，有以下几点：</p><ol><li><p>在压缩真空态下粒子数N的平均值为：<script type="math/tex"><N>=<\xi\mid{a^{\dagger}a}\mid\xi>=<0\mid{S^\dagger{a^\dagger{aS}}}\mid0>=sinh^2r</script>，</p><p>同时<script type="math/tex">N^2</script>的平均值为：<script type="math/tex"><N^2>=<\xi\mid{(a^{\dagger}a)^2}\mid\xi>=2sinh^2rcosh^2r+sinh^2r</script>，</p><p>由此我们可以计算出粒子数的涨落（方差）为：<script type="math/tex">V(N)=<N^2>-<N>^2=2sinh^2rcosh^2r=2<N>(<N>+1)</script>。</p><p>经过计算可知其粒子数分布是超泊松分布。</p></li><li><p>在压缩真空态下<script type="math/tex"><a>=0</script></p></li><li><p>对于系统的两个正交分量<script type="math/tex">X_1,X_2</script>（<script type="math/tex">\hat{X}_1=\frac{\hat{a}+\hat{a}^\dagger}{2},\hat{X}_2=\frac{\hat{a}-\hat{a}^\dagger}{2i}</script>）有其平均值为0（<script type="math/tex"><X_1>=<X_2>=0</script>）。</p><p>经过计算最终得到其方差为：<script type="math/tex">(\triangle\hat{X}_{12})^2=\frac{cosh^2r+sinh^2r\mp{2sinhrcoshrcos\theta}}{4}</script>。</p><p>由此我们得到，当<script type="math/tex">\theta=0</script>时，<script type="math/tex">(\triangle{\hat{X}_1})^2=\frac{e^{-2r}}{4}，(\triangle{\hat{X}_2})^2=\frac{e^{2r}}{4}</script>，此时二者的乘积仍然为<script type="math/tex">\frac{1}{4}</script>，因此压缩真空态仍然为<strong>最小不确定度态</strong>，但是在正交分量<script type="math/tex">X_1</script>处的涨落被压缩得更小了，以此为代价的是在<script type="math/tex">X_2</script>方向上的涨落被放大了。</p><p>而当<script type="math/tex">\theta=\pi</script>时，<script type="math/tex">\triangle{\hat{X}_1}=\frac{e^{2r}}{4}，\triangle{\hat{X}_2}=\frac{e^{-2r}}{4}</script>，同理可以看出，此时的压缩真空态也为最小不确定度态，并且也被压缩了，只是压缩方向变为了<script type="math/tex">X_2</script>方向，由此我们可以得到，<script type="math/tex">\theta</script>影响着压缩方向。</p></li></ol><hr><p>​    为了赋予<script type="math/tex">\theta</script>几何意义，考虑到当<script type="math/tex">\theta</script>从0变化到<script type="math/tex">\pi</script>时，旋转方向可看作旋转了<script type="math/tex">\frac{\pi}{2}</script>。因此不妨考虑将<script type="math/tex">X_1,X_2</script>旋转<script type="math/tex">\frac{\pi}{2}</script>形成新算符<script type="math/tex">Y_1,Y_2</script>。</p><p>​    有<script type="math/tex">\begin{pmatrix}\hat{Y}_1 \\ \hat{Y}_2 \end{pmatrix}=\begin{pmatrix}cos\frac{\theta}{2}&sin\frac{\theta}{2}\\-sin\frac{\theta}{2}&cos\frac{\theta}{2} \end{pmatrix}\begin{pmatrix}\hat{X}_1\\\hat{X}_2 \end{pmatrix}</script></p><p>​    此时我们可以解出<script type="math/tex">\begin{cases}\hat{Y}_1=\frac{1}{2}(ae^{-i\theta/2}+a^\dagger{e^{i\theta/2}}) \\\hat{Y}_2=\frac{1}{2i}(ae^{-i\theta/2}-a^\dagger{e^{i\theta/2}})\end{cases}</script></p><p>​    由此可以得到<script type="math/tex">(\triangle{\hat{Y}_1})^2=\frac{e^{-2r}}{4}，(\triangle{\hat{Y}_2})^2=\frac{e^{2r}}{4}</script>，此时我们可以将<script type="math/tex">Y_1,Y_2</script>视作压缩态的两个长短轴</p><h4 id="压缩态表示"><a href="#压缩态表示" class="headerlink" title="压缩态表示"></a>压缩态表示</h4><p>​    由于我们的相干态可以用平移算符产生：<script type="math/tex">\mid{\alpha}>=\hat{D}(\alpha)\mid{0}></script>，其中<script type="math/tex">\hat{D}(\alpha)=e^{\alpha\hat{a}^\dagger-\alpha^*\hat{a}}</script>由此，我们可以将平移算符作用在压缩真空态上得到更加一般的压缩态的表示形式：<script type="math/tex">\mid{\alpha,\xi}>=\hat{D}(\alpha)\hat{S}(\xi)\mid{0}></script></p><p>​    此时压缩态会在<script type="math/tex">Y_1,Y_2</script>坐标轴上存在平移……</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;量子噪声&quot;&gt;&lt;a href=&quot;#量子噪声&quot; class=&quot;headerlink&quot; title=&quot;量子噪声&quot;&gt;&lt;/a&gt;量子噪声&lt;/h2&gt;&lt;p&gt;​    量子噪声是对于一个量子系统进行测量和控制过程中引入的不可避免的干扰和误差。&lt;/p&gt;
+&lt;p&gt;​    由&lt;stron</summary>
+      
+    
+    
+    
+    
+    <category term="量子光学" scheme="http://example.com/tags/%E9%87%8F%E5%AD%90%E5%85%89%E5%AD%A6/"/>
+    
+    <category term="单模压缩光" scheme="http://example.com/tags/%E5%8D%95%E6%A8%A1%E5%8E%8B%E7%BC%A9%E5%85%89/"/>
+    
+    <category term="压缩光" scheme="http://example.com/tags/%E5%8E%8B%E7%BC%A9%E5%85%89/"/>
+    
+  </entry>
   
   <entry>
     <title>单模光与多能级原子相互作用的半经典理论</title>
