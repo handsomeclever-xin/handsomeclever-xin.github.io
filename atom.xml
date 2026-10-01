@@ -6,7 +6,7 @@
   <link href="https://handsomeclever-xin.github.io/atom.xml" rel="self"/>
   
   <link href="https://handsomeclever-xin.github.io/"/>
-  <updated>2024-07-01T09:10:27.420Z</updated>
+  <updated>2026-10-01T08:57:29.460Z</updated>
   <id>https://handsomeclever-xin.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记录精准测量实验室微小振动的方法</title>
+    <link href="https://handsomeclever-xin.github.io/2026/10/01/%E8%AE%B0%E5%BD%95%E7%B2%BE%E5%87%86%E6%B5%8B%E9%87%8F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%BE%AE%E5%B0%8F%E6%8C%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/"/>
+    <id>https://handsomeclever-xin.github.io/2026/10/01/%E8%AE%B0%E5%BD%95%E7%B2%BE%E5%87%86%E6%B5%8B%E9%87%8F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%BE%AE%E5%B0%8F%E6%8C%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/</id>
+    <published>2026-10-01T06:59:35.000Z</published>
+    <updated>2026-10-01T08:57:29.460Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在设计一个扫描隧道显微镜（STM）之前，一个必须要做的工作是完成一套系统来精确地测量实验室的振动环境，这样做一来可以切实地了解我们的STM所处的真正振动环境，二来可以为日后精确测量STM的振动传递比，为度量整个STM的性能做准备。</p><h2 id="实验器材"><a href="#实验器材" class="headerlink" title="实验器材"></a>实验器材</h2><p>所用的实验器材是从淘宝店家买到的：</p><p><a href="https://item.taobao.com/item.htm?id=730118198056&amp;mi_id=0000S3hhpDlsasB-VqffQtdXVnJzy0wUGM1vwd3EWMHLFHQ&amp;skuId=5232921955265&amp;spm=tbpc.boughtlist.suborder_itemtitle.1.59ad2e8dYjeltv">电荷放大器KT5852</a></p><p><img src="/2026/10/01/记录精准测量实验室微小振动的方法/undefined"  alt="电荷放大器" style="zoom:50%;" /></p><p><a href="https://item.taobao.com/item.htm?id=727380932264&amp;mi_id=00002LOdPwWCZrCEdnKpeJGPYKdfdvtiABRitrz8qr5ph1g&amp;spm=tbpc.boughtlist.suborder_itemtitle.1.59ad2e8dYjeltv">压电式加速度计KT12000</a>：</p><p>图片之后补</p><p><a href="https://item.taobao.com/item.htm?id=13160902380&amp;mi_id=00000vz-lTdId-IoTKRyYmPbafBweADuqQhc8ZbsgBrlOZU&amp;spm=tbpc.boughtlist.suborder_itemtitle.1.59ad2e8dYjeltv">MPS-HD2404位数据采集卡</a>：</p><p><img src="/2026/10/01/记录精准测量实验室微小振动的方法/image-20261001163154131.png"  alt="image-20261001163154131" style="zoom:50%;" /></p><p>配置的通道模式是：通道1：S1模式；通道2：S2模式；通道3、4：S4模式</p><p>其量程是±5V</p><p><a href="https://detail.tmall.com/item.htm?id=712093700499&amp;mi_id=0000q7ZWyzXz4fgAG_Y2Z9feMpCctYT8ZfqxuiSR0-dBnJY&amp;spm=tbpc.boughtlist.suborder_itemtitle.1.59ad2e8dYjeltv&amp;sku_properties=1627207%3A8823934192">STYV-2低噪音 BNC线</a>：</p><p><img src="/2026/10/01/记录精准测量实验室微小振动的方法/image-20261001164156004.png"  alt="image-20261001164156004" style="zoom:50%;" /></p><h2 id="测量过程"><a href="#测量过程" class="headerlink" title="测量过程"></a>测量过程</h2><h3 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h3><h4 id="将加速度计平稳地固定在待测地方"><a href="#将加速度计平稳地固定在待测地方" class="headerlink" title="将加速度计平稳地固定在待测地方"></a>将加速度计平稳地固定在待测地方</h4><p>注意事项：</p><ol><li>在正常测量时加速度计必须尽量牢靠放置，但若是能保证周围安静，没有”不想被测量到的杂乱振动“，并且追求快速测量，则也可不固定严格，但一定要平稳放置。</li><li>若想测量待测地方的XY方向振动，可将加速度计XY方向放置即可</li><li>在挪动加速度计时必须轻拿轻放</li></ol><h4 id="用低噪音BNC线将加速度连接电荷放大器输入，将电荷放大器输出连接采集卡，将采集卡连接电脑"><a href="#用低噪音BNC线将加速度连接电荷放大器输入，将电荷放大器输出连接采集卡，将采集卡连接电脑" class="headerlink" title="用低噪音BNC线将加速度连接电荷放大器输入，将电荷放大器输出连接采集卡，将采集卡连接电脑"></a>用低噪音BNC线将加速度连接电荷放大器输入，将电荷放大器输出连接采集卡，将采集卡连接电脑</h4><p>注意事项：低噪音BNC线必须很好地固定住，以减小压电效应，如果追求快速测量则也可不固定</p><h4 id="修改电荷放大器的量程，高通滤波器，低通滤波器"><a href="#修改电荷放大器的量程，高通滤波器，低通滤波器" class="headerlink" title="修改电荷放大器的量程，高通滤波器，低通滤波器"></a>修改电荷放大器的量程，高通滤波器，低通滤波器</h4><p>注意事项：</p><ol><li>电荷放大器的量程须尽可能匹配待测振动的幅值量级，量程太小，待测信号超出量程则无法测准信号；量程太大，则分辨率下降，这是一个dynamic range的故事</li><li>高通滤波器一般为0.3Hz，低通滤波一般为3KHz</li></ol><h3 id="采集数据"><a href="#采集数据" class="headerlink" title="采集数据"></a>采集数据</h3><p>通常采集60s的数据，采集卡的采样率设置为16K，一共会采集96000组数据，拿到数据之后再将数据进行分析</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;在设计一个扫描隧道显微镜（STM）之前，一个必须要做的工作是完成一套系统来精确地测量实验室的振动环境，这样做一来可以切实地了解我们的STM所</summary>
+      
+    
+    
+    
+    
+    <category term="实验笔记" scheme="https://handsomeclever-xin.github.io/tags/%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="FFT" scheme="https://handsomeclever-xin.github.io/tags/FFT/"/>
+    
+  </entry>
   
   <entry>
     <title>激光锁频</title>
