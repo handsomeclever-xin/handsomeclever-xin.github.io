@@ -1,0 +1,170 @@
+[
+  {
+    "name": "Only One",
+    "artist": "Alex Band",
+    "url": "/music/mp3/Alex%20Band%20-%20Only%20One.mp3",
+    "cover": "/music/cover/Alex%20Band%20-%20Only%20One.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "On My Own",
+    "artist": "Ashes Remain",
+    "url": "/music/mp3/Ashes%20Remain%20-%20On%20My%20Own.mp3",
+    "cover": "/music/cover/Ashes%20Remain%20-%20On%20My%20Own.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "光辉岁月",
+    "artist": "Beyond",
+    "url": "/music/mp3/Beyond%20-%20%E5%85%89%E8%BE%89%E5%B2%81%E6%9C%88.mp3",
+    "cover": "/music/cover/Beyond%20-%20%E5%85%89%E8%BE%89%E5%B2%81%E6%9C%88.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "海阔天空",
+    "artist": "Beyond",
+    "url": "/music/mp3/Beyond%20-%20%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA.mp3",
+    "cover": "/music/cover/Beyond%20-%20%E6%B5%B7%E9%98%94%E5%A4%A9%E7%A9%BA.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "Everglow",
+    "artist": "Coldplay",
+    "url": "/music/mp3/Coldplay%20-%20Everglow.mp3",
+    "cover": "/music/cover/Coldplay%20-%20Everglow.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "What We Started",
+    "artist": "Don Diablo; Steve Aoki; Lush & Simon; BullySongs",
+    "url": "/music/mp3/Don%20Diablo%3B%20Steve%20Aoki%3B%20Lush%20%26%20Simon%3B%20BullySongs%20-%20What%20We%20Started.mp3",
+    "cover": "/music/cover/Don%20Diablo%3B%20Steve%20Aoki%3B%20Lush%20%26%20Simon%3B%20BullySongs%20-%20What%20We%20Started.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "Not Afraid",
+    "artist": "Eminem",
+    "url": "/music/mp3/Eminem%20-%20Not%20Afraid.mp3",
+    "cover": "/music/cover/Eminem%20-%20Not%20Afraid.png",
+    "lrc": ""
+  },
+  {
+    "name": "My Songs Know What You Did In The",
+    "artist": "Fall Out Boy",
+    "url": "/music/mp3/Fall%20Out%20Boy%20-%20My%20Songs%20Know%20What%20You%20Did%20In%20The%20.mp3",
+    "cover": "/music/cover/Fall%20Out%20Boy%20-%20My%20Songs%20Know%20What%20You%20Did%20In%20The%20.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "Sign",
+    "artist": "FLOW",
+    "url": "/music/mp3/FLOW%20-%20Sign.mp3",
+    "cover": "/music/cover/FLOW%20-%20Sign.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "Down",
+    "artist": "Jason Walker",
+    "url": "/music/mp3/Jason%20Walker%20-%20Down.mp3",
+    "cover": "/music/cover/Jason%20Walker%20-%20Down.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "Battle Symphony",
+    "artist": "Linkin Park",
+    "url": "/music/mp3/Linkin%20Park%20-%20Battle%20Symphony.mp3",
+    "cover": "/music/cover/Linkin%20Park%20-%20Battle%20Symphony.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "In the End",
+    "artist": "Linkin Park",
+    "url": "/music/mp3/Linkin%20Park%20-%20In%20the%20End.mp3",
+    "cover": "/music/cover/Linkin%20Park%20-%20In%20the%20End.png",
+    "lrc": ""
+  },
+  {
+    "name": "Leave Out All The Rest",
+    "artist": "Linkin Park",
+    "url": "/music/mp3/Linkin%20Park%20-%20Leave%20Out%20All%20The%20Rest.mp3",
+    "cover": "/music/cover/Linkin%20Park%20-%20Leave%20Out%20All%20The%20Rest.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "Numb",
+    "artist": "Linkin Park",
+    "url": "/music/mp3/Linkin%20Park%20-%20Numb.mp3",
+    "cover": "/music/cover/Linkin%20Park%20-%20Numb.png",
+    "lrc": ""
+  },
+  {
+    "name": "Daylight",
+    "artist": "Maroon 5",
+    "url": "/music/mp3/Maroon%205%20-%20Daylight.mp3",
+    "cover": "/music/cover/Maroon%205%20-%20Daylight.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "Take Me To Your Heart",
+    "artist": "Michael Learns To Rock",
+    "url": "/music/mp3/Michael%20Learns%20To%20Rock%20-%20Take%20Me%20To%20Your%20Heart.mp3",
+    "cover": "/music/cover/Michael%20Learns%20To%20Rock%20-%20Take%20Me%20To%20Your%20Heart.png",
+    "lrc": ""
+  },
+  {
+    "name": "Home",
+    "artist": "MY FIRST STORY",
+    "url": "/music/mp3/MY%20FIRST%20STORY%20-%20Home.mp3",
+    "cover": "/music/cover/MY%20FIRST%20STORY%20-%20Home.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "I Believe I Can Fly",
+    "artist": "R. Kelly",
+    "url": "/music/mp3/R.%20Kelly%20-%20I%20Believe%20I%20Can%20Fly.mp3",
+    "cover": "/music/cover/R.%20Kelly%20-%20I%20Believe%20I%20Can%20Fly.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "I Just Wanna Run",
+    "artist": "The Downtown Fiction",
+    "url": "/music/mp3/The%20Downtown%20Fiction%20-%20I%20Just%20Wanna%20Run.mp3",
+    "cover": "/music/cover/The%20Downtown%20Fiction%20-%20I%20Just%20Wanna%20Run.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "See You Again",
+    "artist": "Wiz Khalifa; Charlie Puth",
+    "url": "/music/mp3/Wiz%20Khalifa%3B%20Charlie%20Puth%20-%20See%20You%20Again.mp3",
+    "cover": "/music/cover/Wiz%20Khalifa%3B%20Charlie%20Puth%20-%20See%20You%20Again.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "安和桥",
+    "artist": "宋冬野",
+    "url": "/music/mp3/%E5%AE%8B%E5%86%AC%E9%87%8E%20-%20%E5%AE%89%E5%92%8C%E6%A1%A5.mp3",
+    "cover": "/music/cover/%E5%AE%8B%E5%86%AC%E9%87%8E%20-%20%E5%AE%89%E5%92%8C%E6%A1%A5.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "热勇",
+    "artist": "栗先达",
+    "url": "/music/mp3/%E6%A0%97%E5%85%88%E8%BE%BE%20-%20%E7%83%AD%E5%8B%87.mp3",
+    "cover": "/music/cover/%E6%A0%97%E5%85%88%E8%BE%BE%20-%20%E7%83%AD%E5%8B%87.jpg",
+    "lrc": ""
+  },
+  {
+    "name": "启程",
+    "artist": "水木年华",
+    "url": "/music/mp3/%E6%B0%B4%E6%9C%A8%E5%B9%B4%E5%8D%8E%20-%20%E5%90%AF%E7%A8%8B.mp3",
+    "cover": "/music/cover/%E6%B0%B4%E6%9C%A8%E5%B9%B4%E5%8D%8E%20-%20%E5%90%AF%E7%A8%8B.png",
+    "lrc": ""
+  },
+  {
+    "name": "成都",
+    "artist": "赵雷",
+    "url": "/music/mp3/%E8%B5%B5%E9%9B%B7%20-%20%E6%88%90%E9%83%BD.mp3",
+    "cover": "/music/cover/%E8%B5%B5%E9%9B%B7%20-%20%E6%88%90%E9%83%BD.jpg",
+    "lrc": ""
+  }
+]
