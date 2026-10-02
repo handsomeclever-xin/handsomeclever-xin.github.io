@@ -26,6 +26,52 @@ function initAPlayer() {
                 audio: audioList
             });
             console.log("播放器加载成功，共" + audioList.length + "首歌");
+
+            // ---------- Media Session API 集成 ----------
+            if ('mediaSession' in navigator) {
+                // 更新锁屏媒体信息的函数
+                function updateMediaSession(song) {
+                    if (!song) return;
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: song.name || '未知歌曲',
+                        artist: song.artist || '未知歌手',
+                        album: '我的博客音乐',
+                        artwork: song.cover ? [
+                            { src: song.cover, sizes: '96x96', type: 'image/jpeg' },
+                            { src: song.cover, sizes: '128x128', type: 'image/jpeg' },
+                            { src: song.cover, sizes: '192x192', type: 'image/jpeg' },
+                            { src: song.cover, sizes: '256x256', type: 'image/jpeg' },
+                            { src: song.cover, sizes: '384x384', type: 'image/jpeg' },
+                            { src: song.cover, sizes: '512x512', type: 'image/jpeg' }
+                        ] : []
+                    });
+                }
+
+                // 初始化时设置当前歌曲信息
+                var currentSong = window.ap.list.audios[window.ap.list.index];
+                updateMediaSession(currentSong);
+
+                // 切歌时更新
+                window.ap.on('listswitch', function () {
+                    var song = window.ap.list.audios[window.ap.list.index];
+                    updateMediaSession(song);
+                });
+
+                // 绑定系统媒体控制（锁屏、耳机线控）
+                navigator.mediaSession.setActionHandler('play', function () {
+                    window.ap.play();
+                });
+                navigator.mediaSession.setActionHandler('pause', function () {
+                    window.ap.pause();
+                });
+                navigator.mediaSession.setActionHandler('previoustrack', function () {
+                    window.ap.skipBack();
+                });
+                navigator.mediaSession.setActionHandler('nexttrack', function () {
+                    window.ap.skipForward();
+                });
+            }
+            // ---------- Media Session API 结束 ----------
         })
         .catch(error => {
             console.error('加载音乐列表失败:', error);
