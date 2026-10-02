@@ -1,36 +1,7 @@
-function initAPlayer() {
-    // 核心防重启逻辑：只要 window.ap 存在，绝对不重新创建
-    if (window.ap) return;
-
-    var container = document.getElementById('aplayer-global');
-    if (!container) {
-        container = document.createElement('div');
-        container.id = 'aplayer-global';
-        container.className = 'aplayer no-destroy';
-        document.body.appendChild(container);
-    }
-
-    fetch('/music/music-data.json')
-        .then(response => response.json())
-        .then(audioList => {
-            window.ap = new APlayer({
-                container: container,
-                fixed: true,
-                mini: true,
-                autoplay: false,
-                theme: '#FADFA3',
-                loop: 'all',
-                order: 'random',
-                preload: 'metadata',
-                volume: 0.7,
-                audio: audioList
-            });
-            console.log("播放器加载成功，共" + audioList.length + "首歌");
-
             // ---------- Media Session API 集成 ----------
             if ('mediaSession' in navigator) {
 
-                // 1. 更新锁屏媒体信息
+                // 更新锁屏媒体信息
                 function updateMediaSession(song) {
                     if (!song) return;
                     navigator.mediaSession.metadata = new MediaMetadata({
@@ -48,16 +19,12 @@ function initAPlayer() {
                     });
                 }
 
-                // 2. 同步播放状态（关键！）
+                // 同步播放状态
                 function updatePlaybackState(state) {
-                    try {
-                        navigator.mediaSession.playbackState = state;
-                    } catch (e) {
-                        console.warn('设置 playbackState 失败:', e);
-                    }
+                    try { navigator.mediaSession.playbackState = state; } catch (e) {}
                 }
 
-                // 3. 同步播放进度（后台也能看到进度条）
+                // 同步播放进度（每秒最多一次）
                 function updatePositionState() {
                     if (!window.ap || !window.ap.audio) return;
                     var audio = window.ap.audio;
@@ -68,27 +35,22 @@ function initAPlayer() {
                             playbackRate: audio.playbackRate || 1,
                             position: audio.currentTime || 0
                         });
-                    } catch (e) {
-                        // 某些浏览器不支持 setPositionState，忽略
-                    }
+                    } catch (e) {}
                 }
 
-                // 初始化：设置当前歌曲信息
-                var currentSong = window.ap.list.audios[window.ap.list.index];
-                updateMediaSession(currentSong);
+                // 初始化
+                updateMediaSession(window.ap.list.audios[window.ap.list.index]);
 
-                // 切歌时更新歌曲信息和进度
+                // 切歌时更新元数据
                 window.ap.on('listswitch', function () {
-                    var song = window.ap.list.audios[window.ap.list.index];
-                    updateMediaSession(song);
+                    updateMediaSession(window.ap.list.audios[window.ap.list.index]);
                     updatePositionState();
                 });
 
-                // 播放、暂停时同步状态
+                // 播放/暂停时同步状态
                 window.ap.on('play', function () {
                     updatePlaybackState('playing');
                     updateMediaSession(window.ap.list.audios[window.ap.list.index]);
-                    updatePositionState();
                 });
                 window.ap.on('pause', function () {
                     updatePlaybackState('paused');
@@ -97,54 +59,55 @@ function initAPlayer() {
                     updatePlaybackState('none');
                 });
 
-                // 进度变化时同步（每秒一次，开销很小）
+                // 进度更新（防抖，避免频繁调用）
+                var lastPositionUpdate = 0;
                 window.ap.on('timeupdate', function () {
-                    updatePositionState();
+                    var now = Date.now();
+                    if (now - lastPositionUpdate > 1000) {
+                        lastPositionUpdate = now;
+                        updatePositionState();
+                    }
                 });
 
-                // 绑定系统媒体控制（锁屏、耳机线控、通知栏）
+                // 独立注册每个 handler，防止一个失败影响其他
                 try {
                     navigator.mediaSession.setActionHandler('play', function () {
-                        window.ap.play();
-                    });
-                    navigator.mediaSession.setActionHandler('pause', function () {
-                        window.ap.pause();
-                    });
-                    navigator.mediaSession.setActionHandler('previoustrack', function () {
-                        window.ap.skipBack();
-                    });
-                    navigator.mediaSession.setActionHandler('nexttrack', function () {
-                        window.ap.skipForward();
-                    });
-                    navigator.mediaSession.setActionHandler('seekto', function (details) {
-                        if (details.seekTime !== undefined) {
-                            window.ap.seek(details.seekTime);
+                        if (window.ap && window.ap.audio) {
+                            window.ap.audio.play();
+                            updatePlaybackState('playing');
                         }
                     });
-                } catch (e) {
-                    console.warn('绑定媒体控制失败:', e);
-                }
+                } catch (e) { console.warn('play handler 注册失败:', e); }
+
+                try {
+                    navigator.mediaSession.setActionHandler('pause', function () {
+                        if (window.ap && window.ap.audio) {
+                            window.ap.audio.pause();
+                            updatePlaybackState('paused');
+                        }
+                    });
+                } catch (e) { console.warn('pause handler 注册失败:', e); }
+
+                try {
+                    navigator.mediaSession.setActionHandler('previoustrack', function () {
+                        if (window.ap) window.ap.skipBack();
+                    });
+                } catch (e) { console.warn('previoustrack handler 注册失败:', e); }
+
+                try {
+                    navigator.mediaSession.setActionHandler('nexttrack', function () {
+                        if (window.ap) window.ap.skipForward();
+                    });
+                } catch (e) { console.warn('nexttrack handler 注册失败:', e); }
+
+                try {
+                    navigator.mediaSession.setActionHandler('seekto', function (details) {
+                        if (details.seekTime !== undefined && window.ap && window.ap.audio) {
+                            window.ap.audio.currentTime = details.seekTime;
+                            updatePositionState();
+                        }
+                    });
+                } catch (e) { console.warn('seekto handler 注册失败:', e); }
+
             }
             // ---------- Media Session API 结束 ----------
-        })
-        .catch(error => {
-            console.error('加载音乐列表失败:', error);
-        });
-}
-
-// 首次加载
-document.addEventListener('DOMContentLoaded', function () {
-    initAPlayer();
-});
-
-// Pjax 切换页面时
-document.addEventListener('pjax:complete', function () {
-    if (!window.ap) {
-        initAPlayer();
-    } else if (!document.getElementById('aplayer-global')) {
-        var container = document.createElement('div');
-        container.id = 'aplayer-global';
-        container.className = 'aplayer no-destroy';
-        document.body.appendChild(container);
-    }
-});
