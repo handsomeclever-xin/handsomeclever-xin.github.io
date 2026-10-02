@@ -29,7 +29,8 @@ function initAPlayer() {
 
             // ---------- Media Session API 集成 ----------
             if ('mediaSession' in navigator) {
-                // 更新锁屏媒体信息的函数
+
+                // 1. 更新锁屏媒体信息
                 function updateMediaSession(song) {
                     if (!song) return;
                     navigator.mediaSession.metadata = new MediaMetadata({
@@ -47,29 +48,82 @@ function initAPlayer() {
                     });
                 }
 
-                // 初始化时设置当前歌曲信息
+                // 2. 同步播放状态（关键！）
+                function updatePlaybackState(state) {
+                    try {
+                        navigator.mediaSession.playbackState = state;
+                    } catch (e) {
+                        console.warn('设置 playbackState 失败:', e);
+                    }
+                }
+
+                // 3. 同步播放进度（后台也能看到进度条）
+                function updatePositionState() {
+                    if (!window.ap || !window.ap.audio) return;
+                    var audio = window.ap.audio;
+                    if (isNaN(audio.duration) || audio.duration === 0) return;
+                    try {
+                        navigator.mediaSession.setPositionState({
+                            duration: audio.duration,
+                            playbackRate: audio.playbackRate || 1,
+                            position: audio.currentTime || 0
+                        });
+                    } catch (e) {
+                        // 某些浏览器不支持 setPositionState，忽略
+                    }
+                }
+
+                // 初始化：设置当前歌曲信息
                 var currentSong = window.ap.list.audios[window.ap.list.index];
                 updateMediaSession(currentSong);
 
-                // 切歌时更新
+                // 切歌时更新歌曲信息和进度
                 window.ap.on('listswitch', function () {
                     var song = window.ap.list.audios[window.ap.list.index];
                     updateMediaSession(song);
+                    updatePositionState();
                 });
 
-                // 绑定系统媒体控制（锁屏、耳机线控）
-                navigator.mediaSession.setActionHandler('play', function () {
-                    window.ap.play();
+                // 播放、暂停时同步状态
+                window.ap.on('play', function () {
+                    updatePlaybackState('playing');
+                    updateMediaSession(window.ap.list.audios[window.ap.list.index]);
+                    updatePositionState();
                 });
-                navigator.mediaSession.setActionHandler('pause', function () {
-                    window.ap.pause();
+                window.ap.on('pause', function () {
+                    updatePlaybackState('paused');
                 });
-                navigator.mediaSession.setActionHandler('previoustrack', function () {
-                    window.ap.skipBack();
+                window.ap.on('ended', function () {
+                    updatePlaybackState('none');
                 });
-                navigator.mediaSession.setActionHandler('nexttrack', function () {
-                    window.ap.skipForward();
+
+                // 进度变化时同步（每秒一次，开销很小）
+                window.ap.on('timeupdate', function () {
+                    updatePositionState();
                 });
+
+                // 绑定系统媒体控制（锁屏、耳机线控、通知栏）
+                try {
+                    navigator.mediaSession.setActionHandler('play', function () {
+                        window.ap.play();
+                    });
+                    navigator.mediaSession.setActionHandler('pause', function () {
+                        window.ap.pause();
+                    });
+                    navigator.mediaSession.setActionHandler('previoustrack', function () {
+                        window.ap.skipBack();
+                    });
+                    navigator.mediaSession.setActionHandler('nexttrack', function () {
+                        window.ap.skipForward();
+                    });
+                    navigator.mediaSession.setActionHandler('seekto', function (details) {
+                        if (details.seekTime !== undefined) {
+                            window.ap.seek(details.seekTime);
+                        }
+                    });
+                } catch (e) {
+                    console.warn('绑定媒体控制失败:', e);
+                }
             }
             // ---------- Media Session API 结束 ----------
         })
@@ -85,16 +139,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Pjax 切换页面时
 document.addEventListener('pjax:complete', function () {
-    // 只要 window.ap 还在，音乐就不会断，什么都不做！
-    // 只有当容器真的被误删时，才补一个容器回去，但不重新创建实例。
     if (!window.ap) {
         initAPlayer();
     } else if (!document.getElementById('aplayer-global')) {
-        // 极端情况：Pjax 把容器弄丢了，我们用 JS 把它塞回 body 末尾
         var container = document.createElement('div');
         container.id = 'aplayer-global';
         container.className = 'aplayer no-destroy';
         document.body.appendChild(container);
-        // 此时 window.ap 还在播放，我们不再初始化，让容器跟实体重新关联即可
     }
 });
