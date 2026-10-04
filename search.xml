@@ -25,6 +25,25 @@
     
     
     <entry>
+      <title>零欧电阻</title>
+      <link href="/2026/10/04/%E9%9B%B6%E6%AC%A7%E7%94%B5%E9%98%BB/"/>
+      <url>/2026/10/04/%E9%9B%B6%E6%AC%A7%E7%94%B5%E9%98%BB/</url>
+      
+        <content type="html"><![CDATA[<h2 id="零欧电阻的作用"><a href="#零欧电阻的作用" class="headerlink" title="零欧电阻的作用"></a>零欧电阻的作用</h2><p>零欧电阻—顾名思义是电阻为0的电阻，他的作用如下：</p><ol><li><p>跳线：在PCB布线中（尤其是单层板中），如果要连接的两个点被其他导线阻隔了，为了不绕圈，可放一个零欧姆电阻充当导线。</p><p><img src="/2026/10/04/零欧电阻/qq_pic_merged_1791116831927.jpg"  alt="qq_pic_merged_1791116831927" style="zoom: 25%;" /></p></li><li><p>一个电子产品（如手机，开发板），通常有不同配置，为了增加硬件的通用性，可以通过零欧电阻做一个选择开关。</p><p><img src="/2026/10/04/零欧电阻/qq_pic_merged_1791116848764.jpg"  alt="qq_pic_merged_1791116848764" style="zoom:25%;" /></p></li><li><p>充当保险丝：零欧电阻的熔断电流一般不高，比如1/4W的零欧电阻，他的熔断电流大概在1.2A左右，在超过这个值时零欧姆电阻就会熔断，充当保险丝。</p><p><img src="/2026/10/04/零欧电阻/qq_pic_merged_1791116869145.jpg"  alt="qq_pic_merged_1791116869145" style="zoom:25%;" /></p></li><li><p>如果在设计电路时电阻阻值无法确定，可以先放一颗零欧电阻，后续修改。</p></li></ol><hr><p>参考视频：<a href="https://www.bilibili.com/video/BV12Te86UESM/?spm_id_from=333.1391.0.0&amp;vd_source=af7c55e193100ad3307e0486d098f70e">电路中，0欧姆电阻有啥用？超形象动画一看就懂！_哔哩哔哩_bilibili</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 电子电路 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>单端接地 or 双端接地？</title>
       <link href="/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/"/>
       <url>/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/</url>
