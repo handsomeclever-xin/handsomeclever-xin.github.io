@@ -1,0 +1,430 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>单端接地 or 双端接地？ | 鑫仔的个人站</title><meta name="keywords" content="实验笔记,接地"><meta name="author" content="鑫仔"><meta name="copyright" content="鑫仔"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="背景在做实验时，为了能够屏蔽外来的干扰信号，我们往往需要给信号线缆增加一个导体包裹，也就是所谓的屏蔽线，正常的射频线缆（如BNC，SMA，Ipex）中也必定存在屏蔽线，当然，屏蔽线必须得接地，以此把外来的干扰信号通过该层导入到大地。 然而，屏蔽线究竟是应该单端接地，还是应该双端接地，在什么情况下应该单端接地，什么情况下应该双端接地，这是我们应该搞清楚的！ 单端接地正常来说，对于一根屏蔽线，若其不是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单端接地 or 双端接地？">
+<meta property="og:url" content="https://handsomeclever-xin.github.io/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/index.html">
+<meta property="og:site_name" content="鑫仔的个人站">
+<meta property="og:description" content="背景在做实验时，为了能够屏蔽外来的干扰信号，我们往往需要给信号线缆增加一个导体包裹，也就是所谓的屏蔽线，正常的射频线缆（如BNC，SMA，Ipex）中也必定存在屏蔽线，当然，屏蔽线必须得接地，以此把外来的干扰信号通过该层导入到大地。 然而，屏蔽线究竟是应该单端接地，还是应该双端接地，在什么情况下应该单端接地，什么情况下应该双端接地，这是我们应该搞清楚的！ 单端接地正常来说，对于一根屏蔽线，若其不是">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://handsomeclever-xin.github.io/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/image-20261004162129642.png">
+<meta property="article:published_time" content="2026-10-04T07:58:46.000Z">
+<meta property="article:modified_time" content="2026-10-04T11:02:14.101Z">
+<meta property="article:author" content="鑫仔">
+<meta property="article:tag" content="实验笔记">
+<meta property="article:tag" content="接地">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://handsomeclever-xin.github.io/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/image-20261004162129642.png"><link rel="shortcut icon" href="/img/1.png"><link rel="canonical" href="https://handsomeclever-xin.github.io/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 鑫仔","link":"链接: ","source":"来源: 鑫仔的个人站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '单端接地 or 双端接地？',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-10-04 19:02:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const fontSizeVal = saveToLocal.get('global-font-size')
+    if (fontSizeVal !== undefined) {
+      document.documentElement.style.setProperty('--global-font-size', fontSizeVal + 'px')
+    }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    document.addEventListener('pjax:complete', detectApple)})(window)</script><link rel="stylesheet" href="/css/style.css"><style type="text/css">#toggle-sidebar {bottom: 80px}</style><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="鑫仔的个人站" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/head.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-solid fa-image"></i><span> 相册</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/image-20261004162129642.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">鑫仔的个人站</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/gallery/"><i class="fa-fw fas fa-solid fa-image"></i><span> 相册</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">单端接地 or 双端接地？</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-10-04T07:58:46.000Z" title="发表于 2026-10-04 15:58:46">2026-10-04</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2026-10-04T11:02:14.101Z" title="更新于 2026-10-04 19:02:14">2026-10-04</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>5分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="单端接地 or 双端接地？"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在做实验时，为了能够屏蔽外来的干扰信号，我们往往需要给信号线缆增加一个导体包裹，也就是所谓的屏蔽线，正常的射频线缆（如BNC，SMA，Ipex）中也必定存在屏蔽线，当然，屏蔽线必须得接地，<strong>以此把外来的干扰信号通过该层导入到大地</strong>。</p>
+<p><mark>然而，屏蔽线究竟是应该单端接地，还是应该双端接地，在什么情况下应该单端接地，什么情况下应该双端接地，这是我们应该搞清楚的！</mark></p>
+<h2 id="单端接地"><a href="#单端接地" class="headerlink" title="单端接地"></a>单端接地</h2><p><mark>正常来说，对于一根屏蔽线，若其不是很长，且外界电磁波干扰是低频干扰，自身信号也是低频，我们就应该单端接地。</mark></p>
+<p>因为如果你双端接地，如果两端的地不是等电位的，存在<strong>瞬态干扰（如雷击，静电放电）与交流电位差（如50Hz工频）</strong>。那么两个地之间的电压差就会随着屏蔽层这跟线流过去，而屏蔽层跟里面芯线的信号线之间是存在微小的分布电容的，这个电压差通过分布电容耦合到你的信号线上，这就产生了<strong>共模干扰</strong>。</p>
+<p><img src="/2026/10/04/单端接地or双端接地/image-20261004162129642.png"  alt="image-20261004162129642" style="zoom:50%;" /></p>
+<p>若是只接一端，就断了这个地环路的回路。</p>
+<h2 id="双端接地"><a href="#双端接地" class="headerlink" title="双端接地"></a>双端接地</h2><p>然而，当外界干扰电磁波的波长与电缆长度接近时的时候，情况就会不同。</p>
+<p>我们考虑电缆很长的情况，此时屏蔽线非常的长，另一头是悬空的，那么悬空的那头是一根悬浮的金属管。此时当外界电磁波干扰的波长和电缆长度接近的时候，悬空端就会作为一根天线和空间电磁场耦合，再通过分布电容进入到信号线中。此时如果将屏蔽层两端都接地，就会把两端电位锁死，不再是天线。</p>
+<p><img src="/2026/10/04/单端接地or双端接地/qq_pic_merged_1791102212139.jpg"  alt="qq_pic_merged_1791102212139" style="zoom: 33%;" /></p>
+<p>一个经验判据是，当电缆长度大于干扰电磁波波长的${\lambda}/20$时，则需要双端接地，否则就会耦合外部干扰</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">干扰源</th>
+<th>波长$\lambda$</th>
+<th>${\lambda}/20$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">工频干扰50Hz</td>
+<td>6000Km</td>
+<td>300Km</td>
+</tr>
+<tr>
+<td style="text-align:center">10KHz</td>
+<td>30Km</td>
+<td>1.5Km</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>也就是说，在我们实验室中碰到的常见电磁波干扰，单端接地即可。</p>
+<h3 id="这里有个前提是：信号必须是低频，对于高频信号情况则有所不同。"><a href="#这里有个前提是：信号必须是低频，对于高频信号情况则有所不同。" class="headerlink" title="这里有个前提是：信号必须是低频，对于高频信号情况则有所不同。"></a><mark>这里有个前提是：信号必须是低频，对于高频信号情况则有所不同。</mark></h3><p><strong>对于高频信号而言，信号的回流路径非常重要！</strong></p>
+<p>若是单端接地：</p>
+<img src="/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/image-20261004173135068.png" class="" title="image-20261004173135068">
+<p>则屏蔽层在 B 端是断开的，没有接到任何东西。回流电流到了 B 端，被迫绕行：从 B 端走远处的地线或地平面回到 A 端。</p>
+<p>这一绕，回路面积从“几乎为零”变成了“信号线与地平面之间的距离围成的面积”。</p>
+<p>回路面积暴增 → 电感暴增 → 辐射发射暴增 → 对外部磁场的敏感度暴增 → 信号波形失真。</p>
+<p><strong><u><em>回路面积感应电压的公式</em></u></strong>：</p>
+<p>$根据法拉第定律，磁场在闭合回路中感应的电压为：V ∝ f × B × A × cosθ$ :</p>
+<ol>
+<li>$磁通量: \phi = B × A × cosθ$</li>
+<li>$法拉第定律:V = -N × d\phi/dt$</li>
+<li>$对于一个正弦磁场:B(t) = B_{max} × sin(2πft)$</li>
+<li>$感应电压的幅值：V_{peak} = 2πf × N × B_{max} × A × cosθ$</li>
+</ol>
+<p>因此，对于高频噪音而言，回路面积尤其重要。</p>
+<hr>
+<p>而如果双端接地：</p>
+<img src="/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/image-20261004173549129.png" class="" title="image-20261004173549129">
+<ul>
+<li>屏蔽层从 A 端到 B 端是一根<strong>连续的导体</strong>。</li>
+<li>比起从 B 端走远处的地线或地平面回到 A 端，高频信号更倾向于从屏蔽层回流，因为屏蔽层阻抗更小($Z=R+jωL$，对于高频信号而言主要看感抗 jωL ，由于屏蔽层的回路面积更小，感抗更小，因此阻抗更小，如果可以从屏蔽层回路，信号会优先从屏蔽层回路）</li>
+<li>回流电流可以从 B 端的负载出发，进入 B 端的屏蔽层接地点，沿着屏蔽层一路流回 A 端，再回到信号源。<strong>回路完整，回流畅通。</strong></li>
+<li>信号电流和回流电流紧贴在一起，回路面积趋近于零。</li>
+<li>结果：辐射极小、抗干扰能力极强、信号波形干净。</li>
+</ul>
+<hr>
+<p>对于低频信号而言：</p>
+<ul>
+<li>$Z=R+jωL$，导体的电阻是主要障碍。电感的影响微乎其微。回流电流会选择<strong>电阻最小</strong>的那条路，并不一定是屏蔽层回流</li>
+<li>而且，其需要屏蔽的外界低频电磁波很难被由于回流路径的原因感应到信号中，因为$V ∝ f × B × A × cosθ$，外界噪音f很小</li>
+</ul>
+<hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ol>
+<li><p>若要去除的噪音是低频噪音（如50Hz的工频），我们通常建议是单端接地，因为：①. 若双端接地，很可能因为两个地电位差别反而将低频噪音耦合进屏蔽层，从而通过寄生电容耦合进信号中；②. 由于低频噪音的波长非常长，即使没有双端接地，悬空的那一段很难将空间的50Hz噪音耦合进系统中；③. 对于低频噪音而言，就算没有双端接地，导致信号回流路径loop变大，也很难通过这个loop耦合进系统中，因为：$V ∝ f × B × A × cosθ$</p>
+</li>
+<li><p>若是要去除的噪音是高频噪音（MHz量级甚至以上），那么我们需要进行双端接地，这样可以：①. 防止悬空端作为天线耦合空间高频噪音；②. 提供一个小的回流loop使得回流路径耦合的高频噪音减小</p>
+</li>
+<li><p>若是我们信号是高频信号，一般采取双端接地，因为：①. 可以减小高频噪音干扰；②.提供一个更短的回流路径，更抗干扰，</p>
+<p>​        若是没有双端接地，一条质量很差的回流路径也可能导致：</p>
+<ul>
+<li>​        <strong>信号波形失真</strong>，因为高感抗的路径无法及时响应信号快速的电流变化，导致<strong>信号边沿变缓、产生振铃或过冲</strong>，严重时甚至导致接收端误判。</li>
+<li><strong>辐射发射（EMI）急剧增加</strong>：增大的回路面积本身就是一个高效的<strong>环形天线</strong>。信号电流在这个大环路中流动，会向空间<strong>辐射电磁场</strong>，导致产品难以通过EMC测试</li>
+<li><strong>对外部干扰更敏感</strong>：同样因为这个大回路，外部磁场的磁力线更容易穿过它。根据法拉第定律 <code>V ∝ f × B × A</code>，回路面积 <code>A</code> 的暴增，使得电缆<strong>更容易拾取外部高频噪声</strong>，抗扰度（EMS）下降</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="plus-混合接地-高频要双端，低频怕地环路怎么办？"><a href="#plus-混合接地-高频要双端，低频怕地环路怎么办？" class="headerlink" title="plus-混合接地-高频要双端，低频怕地环路怎么办？"></a><strong>plus-混合接地-高频要双端，低频怕地环路怎么办？</strong></h2><p>现实中最常用的是“混合接地”：</p>
+<ul>
+<li>一端直接接地；</li>
+<li>另一端通过电容接地，比如 1nF~100nF 高压电容。</li>
+</ul>
+<p>这样：</p>
+<ul>
+<li>低频时电容阻抗高，地环路电流被挡住；</li>
+<li>高频时电容阻抗低，相当于双端接地，提供高频回路。</li>
+</ul>
+<p>也可以：</p>
+<ul>
+<li>加共模扼流圈；</li>
+<li>用隔离放大器、光耦、隔离变压器；</li>
+<li>用光纤；</li>
+<li>做等电位联结，把两端地电位差先降下来。</li>
+</ul>
+<p>如果跨建筑、雷击区、地电位差很大，又要求高速通信，<strong>光纤是最省心的方案</strong>。</p>
+<hr>
+<p>参考视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1njgw6iEFF/?spm_id_from=333.1391.0.0">https://www.bilibili.com/video/BV1njgw6iEFF/?spm_id_from=333.1391.0.0</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">鑫仔</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://handsomeclever-xin.github.io/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/">https://handsomeclever-xin.github.io/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://handsomeclever-xin.github.io" target="_blank">鑫仔的个人站</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/">实验笔记</a><a class="post-meta__tags" href="/tags/%E6%8E%A5%E5%9C%B0/">接地</a></div><div class="post_share"><div class="social-share" data-image="/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/image-20261004162129642.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2026/10/02/hexo%E5%8D%9A%E5%AE%A2%E5%B8%83%E7%BD%AE%E6%9C%AC%E5%9C%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95/"><img class="next-cover" src="/img/back2.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">hexo博客布置本地音乐播放器的方法</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2026/10/01/%E8%AE%B0%E5%BD%95%E7%B2%BE%E5%87%86%E6%B5%8B%E9%87%8F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%BE%AE%E5%B0%8F%E6%8C%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/" title="记录精准测量实验室微小振动的方法"><img class="cover" src="/img/back2.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-10-01</div><div class="title">记录精准测量实验室微小振动的方法</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/head.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">鑫仔</div><div class="author-info__description">我为此奔跑，为此不能停下脚步！</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/handsomeclever-xin"><i class="fab fa-github"></i><span>关注我</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/handsomeclever-xin" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:2101492986@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="/img/qq.jpg" target="_blank" title="qq"><i class="fab fa-qq"></i></a><a class="social-icon" href="/img/weixin.png" target="_blank" title="微信"><i class="fab fa-weixin"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0"><span class="toc-number">2.</span> <span class="toc-text">单端接地</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0"><span class="toc-number">3.</span> <span class="toc-text">双端接地</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%99%E9%87%8C%E6%9C%89%E4%B8%AA%E5%89%8D%E6%8F%90%E6%98%AF%EF%BC%9A%E4%BF%A1%E5%8F%B7%E5%BF%85%E9%A1%BB%E6%98%AF%E4%BD%8E%E9%A2%91%EF%BC%8C%E5%AF%B9%E4%BA%8E%E9%AB%98%E9%A2%91%E4%BF%A1%E5%8F%B7%E6%83%85%E5%86%B5%E5%88%99%E6%9C%89%E6%89%80%E4%B8%8D%E5%90%8C%E3%80%82"><span class="toc-number">3.1.</span> <span class="toc-text">这里有个前提是：信号必须是低频，对于高频信号情况则有所不同。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#plus-%E6%B7%B7%E5%90%88%E6%8E%A5%E5%9C%B0-%E9%AB%98%E9%A2%91%E8%A6%81%E5%8F%8C%E7%AB%AF%EF%BC%8C%E4%BD%8E%E9%A2%91%E6%80%95%E5%9C%B0%E7%8E%AF%E8%B7%AF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">plus-混合接地-高频要双端，低频怕地环路怎么办？</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/" title="单端接地 or 双端接地？"><img src="/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/image-20261004162129642.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="单端接地 or 双端接地？"/></a><div class="content"><a class="title" href="/2026/10/04/%E5%8D%95%E7%AB%AF%E6%8E%A5%E5%9C%B0or%E5%8F%8C%E7%AB%AF%E6%8E%A5%E5%9C%B0/" title="单端接地 or 双端接地？">单端接地 or 双端接地？</a><time datetime="2026-10-04T07:58:46.000Z" title="发表于 2026-10-04 15:58:46">2026-10-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/10/02/hexo%E5%8D%9A%E5%AE%A2%E5%B8%83%E7%BD%AE%E6%9C%AC%E5%9C%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95/" title="hexo博客布置本地音乐播放器的方法"><img src="/img/back2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="hexo博客布置本地音乐播放器的方法"/></a><div class="content"><a class="title" href="/2026/10/02/hexo%E5%8D%9A%E5%AE%A2%E5%B8%83%E7%BD%AE%E6%9C%AC%E5%9C%B0%E9%9F%B3%E4%B9%90%E6%92%AD%E6%94%BE%E5%99%A8%E7%9A%84%E6%96%B9%E6%B3%95/" title="hexo博客布置本地音乐播放器的方法">hexo博客布置本地音乐播放器的方法</a><time datetime="2026-10-02T07:58:49.000Z" title="发表于 2026-10-02 15:58:49">2026-10-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2026/10/01/%E8%AE%B0%E5%BD%95%E7%B2%BE%E5%87%86%E6%B5%8B%E9%87%8F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%BE%AE%E5%B0%8F%E6%8C%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/" title="记录精准测量实验室微小振动的方法"><img src="/img/back2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="记录精准测量实验室微小振动的方法"/></a><div class="content"><a class="title" href="/2026/10/01/%E8%AE%B0%E5%BD%95%E7%B2%BE%E5%87%86%E6%B5%8B%E9%87%8F%E5%AE%9E%E9%AA%8C%E5%AE%A4%E5%BE%AE%E5%B0%8F%E6%8C%AF%E5%8A%A8%E7%9A%84%E6%96%B9%E6%B3%95/" title="记录精准测量实验室微小振动的方法">记录精准测量实验室微小振动的方法</a><time datetime="2026-10-01T06:59:35.000Z" title="发表于 2026-10-01 14:59:35">2026-10-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/01/%E6%BF%80%E5%85%89%E9%94%81%E9%A2%91/" title="激光锁频"><img src="/img/back2.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="激光锁频"/></a><div class="content"><a class="title" href="/2024/07/01/%E6%BF%80%E5%85%89%E9%94%81%E9%A2%91/" title="激光锁频">激光锁频</a><time datetime="2024-07-01T07:24:17.000Z" title="发表于 2024-07-01 15:24:17">2024-07-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/06/20/%E5%9B%9B%E6%B3%A2%E6%B7%B7%E9%A2%91/" title="四波混频"><img src="/2024/06/20/%E5%9B%9B%E6%B3%A2%E6%B7%B7%E9%A2%91/head.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="四波混频"/></a><div class="content"><a class="title" href="/2024/06/20/%E5%9B%9B%E6%B3%A2%E6%B7%B7%E9%A2%91/" title="四波混频">四波混频</a><time datetime="2024-06-20T10:20:18.000Z" title="发表于 2024-06-20 18:20:18">2024-06-20</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2026 By 鑫仔</div><div class="footer_custom_text">My First Story😉</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="font-plus" type="button" title="放大字体"><i class="fas fa-plus"></i></button><button id="font-minus" type="button" title="缩小字体"><i class="fas fa-minus"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/contrib/copy-tex.css"><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: '2Nr3l6l3k86JbWHA4mshffsX-gzGzoHsz',
+      appKey: 'k8oY1rxmvkARjxKHnI2m4Lvk',
+      avatar: 'monsterid',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script src="/js/snow.js"></script><div id="aplayer-global" class="aplayer no-destroy"></div><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="/js/music-player.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+  window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="https://events.vercount.one/js"></script></div></body></html>
